@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     name: What time is it
     steps:
-      - run: echo "Hello world"
+      - run: date
