@@ -10,7 +10,7 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v3
   check_repository_cleanliness:
     runs-on: ubuntu-latest
     steps:
