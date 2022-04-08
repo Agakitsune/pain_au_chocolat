@@ -11,5 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo "TEST=$(find -name "*~")" >> $GITHUB_ENV
-      - run: echo "::error file=${{ env.TEST }}::IDK"
+      - name: Detect File
+        run: echo $FILES
+        env:
+          FILES: $(ls)
