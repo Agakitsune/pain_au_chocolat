@@ -1,0 +1,13 @@
+on: push
+
+jobs:
+  size:
+    runs-on: ubuntu-latest
+    name: Repository size
+    steps:
+      - name: Checkout
+        uses: actions/checkout
+      - name: Branch
+        run: echo $(git branch --show-current)
+      - name: 10000 IQ
+        run: du -skh --exclude=".git"
