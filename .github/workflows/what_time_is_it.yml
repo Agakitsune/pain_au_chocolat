@@ -1,0 +1,7 @@
+on: push
+
+jobs:
+  give_time:
+    name: What time is it
+    steps:
+      - run: echo "Hello world"
