@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo $(find -name "*~")
-      - run: echo "::notice file=tmp~,line=1,col=5::IDK"
+      - run: echo "::error title=Title::IDK"
