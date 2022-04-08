@@ -1,8 +1,0 @@
-on: push
-
-jobs:
-  give_time:
-    runs-on: ubuntu-latest
-    name: What time is it
-    steps:
-      - run: date
