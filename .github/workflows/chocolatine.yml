@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ::set-output name=TEST::$(find -name "*~")
+      - run: echo "::set-output name=TEST::$(find -name "*~")"
       - run: echo "::error file=${{ steps.check_repository_cleanliness.outputs.TEST}}::IDK"
