@@ -13,12 +13,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: Detect File
         run: |
-          find -name "#*#" -printf "::error title=Unwanted file detected,file=%f::%f\n"
-          find -name "*~" -printf "::error title=Unwanted file detected,file=%f::%f\n"
-          find -iname "*pain_au_chocolat*" -printf "::error title=Unwanted file detected,file=%f::%f\n"
-          find -name "*.o" -printf "::error title=Unwanted file detected,file=%f::%f\n"
-          find -name "*.a" -printf "::error title=Unwanted file detected,file=%f::%f\n"
-          find -name "*.so" -printf "::error title=Unwanted file detected,file=%f::%f\n"
-          find -name "*.gcno" -printf "::error title=Unwanted file detected,file=%f::%f\n"
-          find -name "*.gcda" -printf "::error title=Unwanted file detected,file=%f::%f\n"
-          find -name "*.gcov" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+          FILES=
+          FILES=$FILES$(find -name "#*#" -printf "::error title=Unwanted file detected,file=%f::%f\n")
+          FILES=$FILES$(find -name "*~" -printf "::error title=Unwanted file detected,file=%f::%f\n")
+          FILES=$FILES$(find -iname "*pain_au_chocolat*" -printf "::error title=Unwanted file detected,file=%f::%f\n")
+          FILES=$FILES$(find -name "*.o" -printf "::error title=Unwanted file detected,file=%f::%f\n")
+          FILES=$FILES$(find -name "*.a" -printf "::error title=Unwanted file detected,file=%f::%f\n")
+          FILES=$FILES$(find -name "*.so" -printf "::error title=Unwanted file detected,file=%f::%f\n")
+          FILES=$FILES$(find -name "*.gcno" -printf "::error title=Unwanted file detected,file=%f::%f\n")
+          FILES=$FILES$(find -name "*.gcda" -printf "::error title=Unwanted file detected,file=%f::%f\n")
+          FILES=$FILES$(find -name "*.gcov" -printf "::error title=Unwanted file detected,file=%f::%f\n")
