@@ -2,6 +2,7 @@ on: push
 
 jobs:
   give_time:
+    runs_on: ubuntu-latest
     name: What time is it
     steps:
       - run: echo "Hello world"
