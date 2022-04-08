@@ -14,4 +14,5 @@ jobs:
   check_repository_cleanliness:
     runs-on: ubuntu-latest
     steps:
+      - run: ls
       - run: echo $(find -name "*~")
