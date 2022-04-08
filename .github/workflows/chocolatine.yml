@@ -12,5 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Detect File
-        run: find -name "*~" -printf "::error title=Unwanted file Detected,file=%f::%f\n"
-        # run: echo "::set-output name=FILES::$(find -name "*~" -name "#*#" -name "*.a" -name "*.o" -name "*.so" -name "*.gcov" -name "*.gcda" -name "*.gcno" -iname "*pain_au_chocolat*" -path "" "
+        run: find -name "#*#" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+        run: find -name "*~" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+        run: find -iname "*pain_au_chocolat*" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+        run: find -name "*.o" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+        run: find -name "*.a" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+        run: find -name "*.so" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+        run: find -name "*.gcno" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+        run: find -name "*.gcda" -printf "::error title=Unwanted file detected,file=%f::%f\n"
+        run: find -name "*.gcov" -printf "::error title=Unwanted file detected,file=%f::%f\n"
