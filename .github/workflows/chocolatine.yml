@@ -12,5 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Detect File
-        run: find -name "*~" -printf "::error title=Unwanted file Detected,file=%f::%f"
+        run: find -name "*~" -printf "::error title=Unwanted file Detected,file=%f::%f\n"
         # run: echo "::set-output name=FILES::$(find -name "*~" -name "#*#" -name "*.a" -name "*.o" -name "*.so" -name "*.gcov" -name "*.gcda" -name "*.gcno" -iname "*pain_au_chocolat*" -path "" "
