@@ -1,4 +1,0 @@
-::error title=Unwanted file detected,file=tmp~::tmp~
-::error title=Unwanted file detected,file=a~::a~
-::error title=Unwanted file detected,file=b~::b~
-::error title=Unwanted file detected,file=c~::c~
