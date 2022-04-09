@@ -15,7 +15,6 @@ jobs:
         run: |
           find -name "#*#" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
           find -name "*~" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
-          # FILES=${FILES}\n${TMP}
           find -iname "*pain_au_chocolat*" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
           find -name "*.o" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
           find -name "*.a" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
@@ -23,5 +22,5 @@ jobs:
           find -name "*.gcno" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
           find -name "*.gcda" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
           find -name "*.gcov" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
-          # echo -e $FILES
+          find -path "./*tmp/*" -printf "::error title=Unwanted file detected,file=%f::%f\n" >> tmp.txt
           cat tmp.txt
