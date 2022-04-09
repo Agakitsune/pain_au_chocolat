@@ -84,7 +84,7 @@ jobs:
           make tests_run
 
   push_to_mirror:
-    if: github.event == push
+    if: github.event_name == 'push'
     needs: [ check_repository_cleanliness, check_program_compilation, run_tests ]
     name: Mirror
     runs-on: ubuntu-latest
