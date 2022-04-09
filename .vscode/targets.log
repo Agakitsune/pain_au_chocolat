@@ -1,0 +1,345 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-redhat-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Apr  9 18:27:40 2022
+
+# Variables
+
+# makefile (from 'Makefile', line 6)
+OBJ = $(SRC:.c=.o)
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# makefile (from 'Makefile', line 3)
+SRC = src/square.c
+# environment
+I3SOCK = /run/user/1000/i3/ipc-socket.12583
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-21e97e12-e8c8-4512-8a8f-f9f4c3f57961.sock
+# environment
+VSCODE_CWD = /home/Raph
+# environment
+GDM_LANG = en_GB.utf8
+# default
+MAKE_COMMAND := make
+# environment
+GTK3_MODULES = xapp-gtk3-module
+# environment
+define BASH_FUNC_which%%
+() {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot "$@"
+}
+endef
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/Raph/pain_au_chocolat
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+HOSTNAME = fedora
+# environment
+MAIL = /var/spool/mail/Raph
+# environment
+XDG_DATA_DIRS = /home/Raph/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/Raph/.config/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
+# environment
+CONDA_PROMPT_MODIFIER = (base) 
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+# environment
+SSH_ASKPASS = /usr/libexec/openssh/gnome-ssh-askpass
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/lightdm/Raph/xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/Raph/pain_au_chocolat
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+LESSOPEN = ||/usr/bin/lesspipe.sh %s
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXW3ch6X/agent.12583
+# default
+.SHELLFLAGS := -c
+# environment
+HISTSIZE = 1000
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = i3
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=f480c0cd-1af3-4d4d-813c-a1cc95d0cad3&iid=f480c0cd-1af3-4d4d-813c-a1cc95d0cad3&sid=f480c0cd-1af3-4d4d-813c-a1cc95d0cad3","uploadToServer":true}
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# environment
+CONDA_SHLVL = 1
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 13698
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+CONDA_PYTHON_EXE = /home/Raph/anaconda3/bin/python
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
+# environment
+BREAKPAD_DUMP_LOCATION = /home/Raph/.config/Code/exthost Crash Reports
+# default
+MAKE_HOST := x86_64-redhat-linux-gnu
+# environment
+IMSETTINGS_INTEGRATE_DESKTOP = yes
+# makefile
+SHELL = /bin/sh
+# environment
+CONDA_PREFIX = /home/Raph/anaconda3
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=none
+# environment
+SHLVL = 1
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+IMSETTINGS_MODULE = none
+# environment
+PATH = /home/Raph/anaconda3/bin:/home/Raph/anaconda3/condabin:/home/Raph/Downloads/idea-IC-212.5457.46/bin:/home/Raph/Desktop/minecraft-launcher:/home/Raph/Downloads/Discord:/home/Raph/scripts:/home/Raph/.local/bin:/home/Raph/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/var/lib/snapd/snap/bin
+# environment
+MOZ_GMP_PATH = /usr/lib64/mozilla/plugins/gmp-gmpopenh264/system-installed
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?F = $(notdir $?)
+# makefile (from 'Makefile', line 8)
+NAME = slurp
+# environment
+XDG_SEAT = seat0
+# environment
+GTK_IM_MODULE = gtk-im-context-simple
+# environment
+XDG_CURRENT_DESKTOP = i3
+# environment
+KDEDIRS = /usr
+# automatic
++F = $(notdir $+)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = i3
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = i3
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+CONDA_DEFAULT_ENV = base
+# environment
+LOGNAME = Raph
+# environment
+XDG_VTNR = 1
+# makefile
+.DEFAULT_GOAL := all
+# environment
+HISTCONTROL = ignoredups
+# environment
+EDITOR = /usr/bin/nano
+# environment
+DISPLAY = :0
+# environment
+USER = Raph
+# environment
+RUNTYPE = main
+# default
+MAKE_VERSION := 4.3
+# makefile (from 'Makefile', line 4)
+TESTS = tests/test_square.c
+# environment
+which_declare = declare -f
+# environment
+SSH_AGENT_PID = 12742
+# environment
+_ = /usr/bin/make
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+_CE_M = 
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/Raph
+# environment
+QT_IM_MODULE = xim
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-7d88ef12-1.63.2-main.sock
+# environment
+TERM = dumb
+# environment
+XDG_SESSION_ID = 5
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/Raph
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# makefile (from 'Makefile', line 1)
+CC = gcc
+# environment
+MY_PATH = 1
+# environment
+CONDA_EXE = /home/Raph/anaconda3/bin/conda
+# environment
+_CE_CONDA = 
+# environment
+GDMSESSION = i3
+# variable set hash-table stats:
+# Load=120/1024=12%, Rehash=0, Collisions=16/152=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 41, inode 6848547): 9 files, no impossibilities.
+
+# 9 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+tests_run:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 21):
+	gcc -l criterion --coverage $(SRC) $(TESTS) -o debug
+	./debug
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+ 
+make: *** No rule to make target 'src/square.o', needed by 'all'.  Stop.
+
+#  Last modified 2022-04-09 17:22:06.7176719
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
+	rm $(OBJ) -f
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: src/square.o
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 11):
+	gcc $(OBJ) main.c -o $(NAME)
+
+fclean: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	rm $(NAME) -f
+	rm debug -f
+
+# Not a target:
+src/square.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=8/1024=1%, Rehash=0, Collisions=0/21=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 18 / storage = 143 B / avg = 7 B
+# current buf: size = 8162 B / used = 143 B / count = 18 / avg = 7 B
+
+# strcache performance: lookups = 28 / hit rate = 35%
+# hash-table stats:
+# Load=18/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Sat Apr  9 18:27:40 2022
+
+ 
