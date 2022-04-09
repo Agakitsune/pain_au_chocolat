@@ -1,6 +1,6 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/Raph/pain_au_chocolat'
 gcc    -c -o src/square.o src/square.c
-gcc src/square.o main.c -o slurp
+gcc src/square.o main.c -o chocolatine
 make: Leaving directory '/home/Raph/pain_au_chocolat'
  

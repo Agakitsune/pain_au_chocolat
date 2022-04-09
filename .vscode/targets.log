@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'src/square.o', needed by 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-redhat-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Apr  9 18:27:40 2022
+# Make data base, printed on Sat Apr  9 20:07:45 2022
 
 # Variables
 
@@ -163,7 +165,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 ?F = $(notdir $?)
 # makefile (from 'Makefile', line 8)
-NAME = slurp
+NAME = chocolatine
 # environment
 XDG_SEAT = seat0
 # environment
@@ -263,9 +265,9 @@ GDMSESSION = i3
 
 # Directories
 
-# . (device 41, inode 6848547): 9 files, no impossibilities.
+# . (device 41, inode 6848547): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -284,10 +286,7 @@ tests_run:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
-make: *** No rule to make target 'src/square.o', needed by 'all'.  Stop.
-
-#  Last modified 2022-04-09 17:22:06.7176719
+#  Last modified 2022-04-09 20:05:41.250897049
 #  File has been updated.
 #  Successfully updated.
 
@@ -304,6 +303,7 @@ clean:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 all: src/square.o
 #  Command line target.
 #  Implicit rule search has not been done.
@@ -334,12 +334,12 @@ src/square.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 143 B / avg = 7 B
-# current buf: size = 8162 B / used = 143 B / count = 18 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 154 B / avg = 8 B
+# current buf: size = 8162 B / used = 154 B / count = 19 / avg = 8 B
 
-# strcache performance: lookups = 28 / hit rate = 35%
+# strcache performance: lookups = 29 / hit rate = 34%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Sat Apr  9 18:27:40 2022
+# Load=19/8192=0%, Rehash=0, Collisions=0/29=0%
+# Finished Make data base on Sat Apr  9 20:07:45 2022
 
  
