@@ -58,7 +58,7 @@ jobs:
               echo "::error title=Missing executables,file=$file::$file";
               exit 1;
             fi;
-            if [ -x $file ]; then
+            if [ ! -x $file ]; then
               echo "::error title=File is not executable,file=$file::$file";
               exit 1;
             fi
