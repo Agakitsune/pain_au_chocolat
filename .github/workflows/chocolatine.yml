@@ -32,7 +32,34 @@ jobs:
     needs: check_repository_cleanliness
     name: Program compiles
     runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker
     steps:
       - uses: actions/checkout@v3
+      - name: Check Makefile
+        run: |
+          if [ -f Makefile ]; then
+            echo ::error title=Missing Makefile::The repo doesn't have a Makefile;
+            exit 1;
+          fi
       - name: Compiles
-        run: ls
+        run: |
+          timeout 2m make
+          if [ $? neq 0 ]; then
+            echo ::error title=Compilation Timeout::Your program take more than 2 minutes to compiles;
+            exit 1;
+          fi
+      - name: Clean
+        run: |
+          make clean
+      - name: Check
+        run: |
+          for file in $(echo ${{ github.env.EXECUTABLES }} | tr "," " "); do
+            if [ ! -f $file ]; then
+              echo ::error title=Missing executables,file=$file::$file;
+              exit 1;
+            fi;
+            if [ -x $file ]; then
+              echo ::error title=File is not executable,file=$file::$file;
+              exit 1;
+            fi
+          done
