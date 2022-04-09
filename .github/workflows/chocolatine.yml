@@ -29,6 +29,7 @@ jobs:
 
   check_program_compilation:
     name: Program compiles
+    if: jobs.status == succes
     runs-on: ubuntu-latest
     steps:
       - name: Compiles
