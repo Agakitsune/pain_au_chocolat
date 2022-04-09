@@ -28,8 +28,8 @@ jobs:
           if [ ! -z tmp.txt ]; exit 1; fi
 
   check_program_compilation:
+    needs: check_repository_cleanliness
     name: Program compiles
-    if: job.status == succes
     runs-on: ubuntu-latest
     steps:
       - name: Compiles
