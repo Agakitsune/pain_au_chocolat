@@ -8,6 +8,6 @@
 #ifndef CHOCOLATINE_H_
     #define CHOCOLATINE_H_
 
-int square(int a)
+int square(int a);
 
 #endif /* !CHOCOLATINE_H_ */

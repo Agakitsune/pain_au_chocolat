@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'src/square.o', needed by 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-redhat-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,13 +6,14 @@ make: *** No rule to make target 'src/square.o', needed by 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Apr  9 20:07:45 2022
+# Make data base, printed on Sat Apr  9 20:10:29 2022
 
 # Variables
 
-# makefile (from 'Makefile', line 6)
+# makefile (from 'Makefile', line 10)
 OBJ = $(SRC:.c=.o)
 # environment
+ 
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
@@ -130,6 +129,8 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 <D = $(patsubst %/,%,$(dir $<))
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 6)
+INCLUDE = -I ./include
 # environment
 BREAKPAD_DUMP_LOCATION = /home/Raph/.config/Code/exthost Crash Reports
 # default
@@ -164,7 +165,7 @@ MAKEFILES :=
 VSCODE_LOG_NATIVE = false
 # automatic
 ?F = $(notdir $?)
-# makefile (from 'Makefile', line 8)
+# makefile (from 'Makefile', line 12)
 NAME = chocolatine
 # environment
 XDG_SEAT = seat0
@@ -214,6 +215,8 @@ SSH_AGENT_PID = 12742
 _ = /usr/bin/make
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'Makefile', line 8)
+CFLAGS = -W -Wall -Werror -Wextra $(INCLUDE)
 # environment
 _CE_M = 
 # environment
@@ -257,7 +260,7 @@ _CE_CONDA =
 # environment
 GDMSESSION = i3
 # variable set hash-table stats:
-# Load=120/1024=12%, Rehash=0, Collisions=16/152=11%
+# Load=122/1024=12%, Rehash=0, Collisions=18/162=11%
 
 # Pattern-specific Variable Values
 
@@ -265,9 +268,9 @@ GDMSESSION = i3
 
 # Directories
 
-# . (device 41, inode 6848547): 10 files, no impossibilities.
+# . (device 41, inode 6848547): 11 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -279,14 +282,14 @@ tests_run:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
+#  recipe to execute (from 'Makefile', line 25):
 	gcc -l criterion --coverage $(SRC) $(TESTS) -o debug
 	./debug
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-09 20:05:41.250897049
+#  Last modified 2022-04-09 20:10:18.344676786
 #  File has been updated.
 #  Successfully updated.
 
@@ -294,7 +297,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 14):
+#  recipe to execute (from 'Makefile', line 18):
 	rm $(OBJ) -f
 
 # Not a target:
@@ -303,43 +306,70 @@ clean:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 all: src/square.o
 #  Command line target.
 #  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
 #  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
-	gcc $(OBJ) main.c -o $(NAME)
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# * := 
+# automatic
+# < := src/square.o
+# automatic
+# + := src/square.o
+# automatic
+# % := 
+# automatic
+# ^ := src/square.o
+# automatic
+# ? := src/square.o
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  recipe to execute (from 'Makefile', line 15):
+	gcc $(CFLAGS) $(OBJ) main.c -o $(NAME)
 
 fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
+#  recipe to execute (from 'Makefile', line 21):
 	rm $(NAME) -f
 	rm debug -f
 
 # Not a target:
 src/square.o:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-04-09 20:10:24.986647533
+#  File has been updated.
+#  Successfully updated.
+
+ 
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/21=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/22=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 154 B / avg = 8 B
-# current buf: size = 8162 B / used = 154 B / count = 19 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 162 B / avg = 8 B
+# current buf: size = 8162 B / used = 162 B / count = 20 / avg = 8 B
 
-# strcache performance: lookups = 29 / hit rate = 34%
+# strcache performance: lookups = 31 / hit rate = 35%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=0/29=0%
-# Finished Make data base on Sat Apr  9 20:07:45 2022
+# Load=20/8192=0%, Rehash=0, Collisions=0/31=0%
+# Finished Make data base on Sat Apr  9 20:10:29 2022
 
  
