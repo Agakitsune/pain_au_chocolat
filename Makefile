@@ -3,12 +3,16 @@ CC = gcc
 SRC = src/square.c
 TESTS = tests/test_square.c
 
+INCLUDE = -I ./include
+
+CFLAGS = -W -Wall -Werror -Wextra $(INCLUDE)
+
 OBJ = $(SRC:.c=.o)
 
 NAME = chocolatine
 
 all: $(OBJ)
-	gcc $(OBJ) main.c -o $(NAME)
+	gcc $(CFLAGS) $(OBJ) main.c -o $(NAME)
 
 clean:
 	rm $(OBJ) -f
