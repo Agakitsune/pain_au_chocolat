@@ -63,3 +63,18 @@ jobs:
               exit 1;
             fi
           done
+
+  run_tests:
+    needs: check_program_compilation
+    name: Run Tests
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Tests
+        run: |
+          make tests_run
+          if [ $? != 0 ]; then
+            echo "::error title=Tests fails::The program doesn't pass the tests";
+            exit 1;
+          fi

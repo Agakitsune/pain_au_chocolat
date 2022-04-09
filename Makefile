@@ -1,13 +1,22 @@
 CC = gcc
 
-SRC = main.c
+SRC = src/square.c
+TESTS = tests/test_square.c
 
 OBJ = $(SRC:.c=.o)
 
 NAME = slurp
 
 all: $(OBJ)
-	gcc $(OBJ) -o $(NAME)
+	gcc $(OBJ) main.c -o $(NAME)
 
 clean:
-	rm $(OBJ)
+	rm $(OBJ) -f
+
+fclean: clean
+	rm $(NAME) -f
+	rm debug -f
+
+tests_run:
+	gcc -l criterion --coverage $(SRC) $(TESTS) -o debug
+	./debug
