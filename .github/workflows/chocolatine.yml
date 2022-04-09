@@ -81,6 +81,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       # - name: Unshallow repository
       #   run: |
       #     git remote add origin ${{ env.MIRROR_URL }}
@@ -91,12 +93,12 @@ jobs:
       #       ${{ env.MIRROR_URL }}
       #     ssh_private_key:
       #       ${{ secrets.GIT_SSH_PRIVATE_KEY }}
-      # touch ssh_key
-          # echo "${{ secrets.GIT_SSH_PRIVATE_KEY }}" > ssh_key
-          # chmod 600 ssh_key
-          # export GIT_SSH_COMMAND="ssh -v -i ssh_key -o StrictHostKeyChecking=no -l git"
       - name: Mirror
         run: |
+          touch ssh_key
+          echo "${{ secrets.GIT_SSH_PRIVATE_KEY }}" > ssh_key
+          chmod 600 ssh_key
+          export GIT_SSH_COMMAND="ssh -v -i ssh_key -o StrictHostKeyChecking=no -l git"
           git remote add mirror ${{ env.MIRROR_URL }}
           git fetch --unshallow mirror
           git push --tags --force --prune mirror "refs/remotes/origin/*:refs/heads/*"
