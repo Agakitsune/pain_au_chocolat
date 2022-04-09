@@ -4,102 +4,89 @@ env:
   MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-RUN-2-1-chocolatine-raphael.turpin.git
   EXECUTABLES: slurp
 
-on: push
+on: [ push, pull ]
 
 jobs:
-  # check_repository_cleanliness:
-  #   name: Repository is clean
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Detect File
-  #       run: |
-  #         touch tmp.txt
-  #         find -name "#*#" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -name "*~" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -iname "*pain_au_chocolat*" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -name "*.o" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -name "*.a" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -name "*.so" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -name "*.gcno" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -name "*.gcda" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -name "*.gcov" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         find -path "./*tmp/*" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
-  #         cat tmp.txt
-  #         if [ -s tmp.txt ]; then exit 1; fi
+  check_repository_cleanliness:
+    name: Repository is clean
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Detect File
+        run: |
+          touch tmp.txt
+          find -name "#*#" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -name "*~" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -iname "*pain_au_chocolat*" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -name "*.o" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -name "*.a" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -name "*.so" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -name "*.gcno" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -name "*.gcda" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -name "*.gcov" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          find -path "./*tmp/*" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
+          cat tmp.txt
+          if [ -s tmp.txt ]; then exit 1; fi
 
-  # check_program_compilation:
-  #   needs: check_repository_cleanliness
-  #   name: Program compiles
-  #   runs-on: ubuntu-latest
-  #   container: epitechcontent/epitest-docker
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Check Makefile
-  #       run: |
-  #         if [ ! -f Makefile ]; then
-  #           echo "::error title=Missing Makefile::The repo doesn't have a Makefile";
-  #           exit 1;
-  #         fi
-  #     - name: Compiles
-  #       run: |
-  #         timeout 2m make
-  #         if [ $? != 0 ]; then
-  #           echo "::error title=Compilation Timeout::Your program take more than 2 minutes to compiles";
-  #           exit 1;
-  #         fi
-  #     - name: Clean
-  #       run: |
-  #         make clean
-  #     - name: Check
-  #       run: |
-  #         for file in $(echo $EXECUTABLES | tr "," " "); do
-  #           if [ ! -f $file ]; then
-  #             echo "::error title=Missing executables,file=$file::$file";
-  #             exit 1;
-  #           fi;
-  #           if [ ! -x $file ]; then
-  #             echo "::error title=File is not executable,file=$file::$file";
-  #             exit 1;
-  #           fi
-  #         done
+  check_program_compilation:
+    needs: check_repository_cleanliness
+    name: Program compiles
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check Makefile
+        run: |
+          if [ ! -f Makefile ]; then
+            echo "::error title=Missing Makefile::The repo doesn't have a Makefile";
+            exit 1;
+          fi
+      - name: Compiles
+        run: |
+          timeout 2m make
+          if [ $? != 0 ]; then
+            echo "::error title=Compilation Timeout::Your program take more than 2 minutes to compiles";
+            exit 1;
+          fi
+      - name: Clean
+        run: |
+          make clean
+      - name: Check
+        run: |
+          for file in $(echo $EXECUTABLES | tr "," " "); do
+            if [ ! -f $file ]; then
+              echo "::error title=Missing executables,file=$file::$file";
+              exit 1;
+            fi;
+            if [ ! -x $file ]; then
+              echo "::error title=File is not executable,file=$file::$file";
+              exit 1;
+            fi
+          done
 
-  # run_tests:
-  #   needs: [ check_repository_cleanliness, check_program_compilation ]
-  #   name: Run Tests
-  #   runs-on: ubuntu-latest
-  #   container: epitechcontent/epitest-docker
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Run Tests
-  #       run: |
-  #         make tests_run
+  run_tests:
+    needs: [ check_repository_cleanliness, check_program_compilation ]
+    name: Run Tests
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Tests
+        run: |
+          make tests_run
 
   push_to_mirror:
-    # needs: [ check_repository_cleanliness, check_program_compilation, run_tests ]
+    if: github.event == push
+    needs: [ check_repository_cleanliness, check_program_compilation, run_tests ]
     name: Mirror
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      # - name: Unshallow repository
-      #   run: |
-      #     git remote add origin ${{ env.MIRROR_URL }}
-      #     git fetch --unshallow origin
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
             ${{ env.MIRROR_URL }}
           ssh_private_key:
             ${{ secrets.GIT_SSH_PRIVATE_KEY }}
-      # - name: Mirror
-      #   run: |
-      #     touch ssh_key
-      #     echo "${{ secrets.GIT_SSH_PRIVATE_KEY }}" > ssh_key
-      #     chmod 600 ssh_key
-      #     export GIT_SSH_COMMAND="ssh -v -i ssh_key -o StrictHostKeyChecking=no -l git"
-      #     git remote add mirror ${{ env.MIRROR_URL }}
-      #     git fetch --unshallow mirror
-      #     git push --tags --force --prune mirror "refs/remotes/origin/*:refs/heads/*"
-      #     rm ssh_key -f
