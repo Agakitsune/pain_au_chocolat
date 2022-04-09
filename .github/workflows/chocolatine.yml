@@ -83,7 +83,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Unshallow repository
         run: |
-          git remote add ${{ env.MIRROR_URL }}
+          git remote add origin ${{ env.MIRROR_URL }}
           git fetch --unshallow origin
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
