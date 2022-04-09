@@ -26,7 +26,7 @@ jobs:
           find -name "*.gcov" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
           find -path "./*tmp/*" -printf "::error title=Unwanted file detected,file=%f::%p\n" >> tmp.txt
           cat tmp.txt
-          if [ ! -z tmp.txt ]; then exit 1; fi
+          if [ ! -s tmp.txt ]; then exit 1; fi
 
   check_program_compilation:
     needs: check_repository_cleanliness
