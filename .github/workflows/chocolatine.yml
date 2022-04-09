@@ -2,7 +2,7 @@ name: Raisintine
 
 env:
   MIRROR_URL: 'git@github.com:EpitechPromo2026/B-DOP-200-RUN-2-1-chocolatine-raphael.turpin.git'
-  EXECUTABLES: ''
+  EXECUTABLES: 'slurp'
 
 on: push
 
