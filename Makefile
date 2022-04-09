@@ -5,7 +5,7 @@ TESTS = tests/test_square.c
 
 OBJ = $(SRC:.c=.o)
 
-NAME = slurp
+NAME = chocolatine
 
 all: $(OBJ)
 	gcc $(OBJ) main.c -o $(NAME)
